@@ -3,8 +3,8 @@ author: Thomas "wkta" Iwaszko
 
  MIT Licence
 """
-from os import sep
-
+# from os import sep
+import os
 
 screen = None
 
@@ -31,7 +31,7 @@ def reset_gl_game_vars():
 
 
 # - const
-VER = '0.2104'
+VER = '0.2105'
 CAPTION = 'Space Gatherer v.' + VER
 print(CAPTION)
 print(' ~ ~ ~ welcome ~ ~ ~')
@@ -58,7 +58,7 @@ ASSETS = [  # order matters!
     'slow-reactor.wav',  # ambiant sound
 ]
 for k, elt in enumerate(ASSETS):
-    ASSETS[k] = sep.join((ASSET_DIR, ASSETS[k]))
+    ASSETS[k] = os.path.join(os.getcwd(), ASSET_DIR, ASSETS[k])
 
 
 # - const (game balancing)
