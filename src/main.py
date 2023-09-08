@@ -4,6 +4,8 @@ import glvars
 
 
 def main_func():
+    glvars.ensure_path_ok()
+    print(glvars.ASSETS)
     pygame.init()
 
     glvars.screen = pygame.display.set_mode((640, 480))

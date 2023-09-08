@@ -57,8 +57,11 @@ ASSETS = [  # order matters!
     'explosion_002.wav',  # when an obstacle is hit
     'slow-reactor.wav',  # ambiant sound
 ]
-for k, elt in enumerate(ASSETS):
-    ASSETS[k] = os.path.join(os.getcwd(), ASSET_DIR, ASSETS[k])
+
+
+def ensure_path_ok():
+    for k, elt in enumerate(ASSETS):
+        ASSETS[k] = os.path.join(os.path.dirname(__file__), ASSET_DIR, ASSETS[k])
 
 
 # - const (game balancing)
